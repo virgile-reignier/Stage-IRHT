@@ -1,6 +1,6 @@
 import csv, os, requests, json, time
 from bs4 import BeautifulSoup
-from Boîte_a_outils import chemin_actuel, DEPARTEMENTS
+from Boîte_a_outils import chemin_actuel, DEPARTEMENTS, extract_data
 from collections import defaultdict
 
 # I - Je définis toutes les variables dont j'ai besoin
@@ -15,10 +15,11 @@ DEPARTEMENTS_COUVERTS = ["Aude", "Hérault", "Pyrénées-Atlantiques", "Gard", "
                          "Morbilhan", "Sarthe", "Loir-et-Cher", "Eure-et-Loir", "Eure", "Calvados", "Seine-Maritime",
                          "Pas-de-Calais", "Somme", "Oise", "Aisne"]
 
-CODE_PAYS = [["France", "Belgique", "Grèce", "Israël", "Turquie", "Italie", "Albanie", "Espagne", "Pays-Bas", "Angleterre",
-             "Suisse", "Irlande", "Allemagne", "Angleterre", "Navarre", "Macédoine du Nord", "Croatie", "Serbie", "Palestine"],
+CODE_PAYS = [["France", "Belgique", "Grèce", "Israël", "Turquie", "Italie", "Albanie", "Espagne", "Pays-Bas",
+              "Angleterre", "Suisse", "Irlande", "Allemagne", "Grande-Bretagne", "Navarre", "Macédoine du Nord",
+              "Croatie", "Serbie", "Palestine", "Luxembourg", "Portugal"],
             ["FR", "BE", "GR", "IL", "TR", "IT", "AL", "ES", "NL", "GB",
-             "CH", "IE", "DE", "GB", "ES", "MK", "HR", "RS", "PS"]]
+             "CH", "IE", "DE", "GB", "ES", "MK", "HR", "RS", "PS", "LU", "PT"]]
 
 DEPARTEMENTS_MAJ = [["Côtes-du-Nord", "Loire-Inférieure", "Basses-Pyrénées", "Seine-Inférieure", "Seine"],
                     ["Côtes d'Armor", "Loire-Atlantique", "Pyrénées-Atlantiques", "Seine-Maritime", "Paris"]]
@@ -26,12 +27,7 @@ DEPARTEMENTS_MAJ = [["Côtes-du-Nord", "Loire-Inférieure", "Basses-Pyrénées",
 user = '&username=virgile_reignier'
 
 # Extraction des toponymes du csv
-with open(file, 'r', encoding="utf8") as f:
-    spamreader = csv.reader(f, delimiter='\t')
-    data = []
-    for row in spamreader:
-        data.append(row)
-
+data = extract_data(file)
 colonnes = data[0] + ["code_insee", "long", "lat", "dicotopo_id / geonames_id",
                       "Proposition(s) retenue(s)", "erreur(s)"]
 

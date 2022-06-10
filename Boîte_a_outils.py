@@ -19,6 +19,20 @@ PAYS = ["Grèce", "Israël", "Turquie", "Italie", "Albanie", "Belgique", "Espagn
         "Suisse", "Irlande", "Yougoslavie", "Palestine", "Allemagne", "Empire de Constantinople", "Portugal", "Luxembourg",
         "Grande-Bretagne", "Navarre"]
 
+
+def extract_data(file):
+    '''
+    :param file : file to extract
+    return : list of row contains in this file
+    '''
+    with open(file, 'r', encoding="utf8") as f:
+        spamreader = csv.reader(f, delimiter='\t')
+        data = []
+        for row in spamreader:
+            data.append(row)
+    return data
+
+
 def dicts_to_csv(dicts, file):
     '''
     :param dicts: list of dictionnaries
