@@ -9,7 +9,7 @@
     <xsl:template match="/">
 
 <!-- Des éléments ont été perdus dans le cadre de cette chaîne de traitement, notament les entrées disposant d'un nombre important
-        de renvois vers des entrées d'inventaire, sans qu'aucune explication n'ait pu en être tirée -->
+        de renvois vers des entrées d'inventaire, attention au nombre de caractère maximum autorisé par un champ csv ! -->
 
         <!-- Je crée un premier document associant chaque entrée à son id pour 
             permettre de faire des recherches dedans -->
