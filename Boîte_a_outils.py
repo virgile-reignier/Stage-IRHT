@@ -17,7 +17,7 @@ DEPARTEMENTS = ["Ain", "Aisne", "Allier", "Alpes-de-Haute-Provence", "Hautes-Alp
 
 PAYS = ["Grèce", "Israël", "Turquie", "Italie", "Albanie", "Belgique", "Espagne", "Pays-Bas", "Angleterre", "Saint-Empire Romain Germanique",
         "Suisse", "Irlande", "Yougoslavie", "Palestine", "Allemagne", "Empire de Constantinople", "Portugal", "Luxembourg",
-        "Grande-Bretagne", "Navarre"]
+        "Grande-Bretagne", "Navarre", "Chypre", "Macédoine du Nord", 'Croatie', "Egypte", "Serbie"]
 
 
 def extract_data(file):

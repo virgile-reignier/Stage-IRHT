@@ -17,7 +17,7 @@ DEPARTEMENTS_COUVERTS = ["Aude", "Hérault", "Pyrénées-Atlantiques", "Gard", "
 
 CODE_PAYS = [["France", "Belgique", "Grèce", "Israël", "Turquie", "Italie", "Albanie", "Espagne", "Pays-Bas",
               "Angleterre", "Suisse", "Irlande", "Allemagne", "Grande-Bretagne", "Navarre", "Macédoine du Nord",
-              "Croatie", "Serbie", "Palestine", "Luxembourg", "Portugal"],
+              "Croatie", "Serbie", "Palestine", "Luxembourg", "Portugal", "Croatie"],
             ["FR", "BE", "GR", "IL", "TR", "IT", "AL", "ES", "NL", "GB",
              "CH", "IE", "DE", "GB", "ES", "MK", "HR", "RS", "PS", "LU", "PT"]]
 

@@ -4,7 +4,7 @@ from Boîte_a_outils import DEPARTEMENTS, PAYS, chemin_actuel
 file = os.path.join(chemin_actuel, "index_to_csv.csv")
 results = os.path.join(chemin_actuel, "toponymes.csv")
 
-#Extraction du csv des lignes dont on veut chercher les références et suppression les doublons issues des sous-entrées
+# Extraction du csv des lignes dont on veut chercher les références et suppression les doublons issues des sous-entrées
 with open(file, 'r', encoding="utf8") as f:
     spamreader = csv.reader(f, delimiter='\t')
     noms = []
@@ -16,7 +16,7 @@ with open(file, 'r', encoding="utf8") as f:
                 noms.append(name)
                 data.append(row)
 
-#Code pour structurer les entrées en fonction des éléments géographiques qu'elles contiennent
+# Code pour structurer les entrées en fonction des éléments géographiques qu'elles contiennent
 localités = []
 for name in data:
     description = []

@@ -17,16 +17,15 @@ for entree in index[1:]:
 
 i = []
 for row in index[1:]:
-    if row[10] and row[10] != "Not Found":
+    if row[10] and row[10] != "Not Found" and row[12]:
         nums = row[12].split('|')[:-1]
         renvois = row[10].split()
         for renvoi in renvois:
             if renvoi in entrees:
                 nums_bis = entrees[renvoi][12].split('|')[:-1]
-                for n in nums_bis:
-                    if n not in nums:
-                        if row not in i:
-                            i.append(row)
+                if nums != nums_bis:
+                    if row not in i:
+                        i.append(row)
 
 for r in i:
     print(r)
